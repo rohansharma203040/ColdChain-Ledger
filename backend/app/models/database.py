@@ -349,18 +349,26 @@ class AuditEvent(Base):
 # ─── Engine and Session Factory ───────────────────────────────────────────────
 
 def get_database_url():
-    return os.environ.get(
+    url = os.environ.get(
         "DATABASE_URL",
         "sqlite:///coldchain.db"
     )
+    if url.startswith("postgres://"):
+        url = url.replace("postgres://", "postgresql://", 1)
+    return url
 
 
 def create_db_engine(db_url=None):
     url = db_url or get_database_url()
+    if url.startswith("postgres://"):
+        url = url.replace("postgres://", "postgresql://", 1)
     connect_args = {}
+    engine_kwargs = {}
     if url.startswith("sqlite"):
         connect_args = {"check_same_thread": False}
-    return create_engine(url, connect_args=connect_args, echo=False)
+    else:
+        engine_kwargs["pool_pre_ping"] = True
+    return create_engine(url, connect_args=connect_args, echo=False, **engine_kwargs)
 
 
 def init_db(engine=None):

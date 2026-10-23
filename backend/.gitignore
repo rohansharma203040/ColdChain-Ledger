@@ -1,0 +1,26 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+coldchain.db
+
+# Private keys
+keys/*.pem
+keys/*.key
+!keys/.gitkeep
+
+# Virtual environment
+venv/
+.venv/
+env/

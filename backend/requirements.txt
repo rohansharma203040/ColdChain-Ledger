@@ -1,0 +1,23 @@
+# ColdChain Ledger — Backend Dependencies
+# Web Framework and Extensions
+Flask>=3.0.0,<4.0.0
+Flask-Cors>=4.0.0,<7.0.0
+Flask-JWT-Extended>=4.6.0,<5.0.0
+Werkzeug>=3.0.0,<4.0.0
+
+# Database and ORM
+SQLAlchemy>=2.0.0,<3.0.0
+psycopg2-binary>=2.9.9
+
+# Cryptography and Verification (Ed25519 & SHA-256)
+cryptography>=42.0.0
+
+# PDF Report Generation and Telemetry Plotting
+reportlab>=4.0.0,<6.0.0
+matplotlib>=3.8.0,<4.0.0
+
+# Production WSGI Server for Render Deployment
+gunicorn>=21.2.0
+
+# Test Suite
+pytest>=8.0.0

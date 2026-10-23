@@ -1,0 +1,1 @@
+# Preserve keys directory structure. Real PEM keys should be ignored and injected via Render Secret Files.
