@@ -7,7 +7,7 @@ Werkzeug>=3.0.0,<4.0.0
 
 # Database and ORM
 SQLAlchemy>=2.0.0,<3.0.0
-psycopg2-binary>=2.9.9
+psycopg[binary]>=3.1.0
 
 # Cryptography and Verification (Ed25519 & SHA-256)
 cryptography>=42.0.0
